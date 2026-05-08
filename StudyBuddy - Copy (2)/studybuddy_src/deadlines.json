@@ -1,0 +1,202 @@
+[
+  {
+    "event": "DSA711S Test 2 (POSTPONED)",
+    "date": "2026-04-24",
+    "rawDate": "April 24, 2026",
+    "module": "DSA711S",
+    "type": "Test",
+    "notes": "Postponed — ARI clash. Check for new date"
+  },
+  {
+    "event": "ARI711S Test",
+    "date": "2026-04-24",
+    "rawDate": "April 24, 2026 7:30 PM (GMT+2)",
+    "module": "ARI711S",
+    "type": "Test",
+    "notes": "17:30 | Engineering Basement Section A"
+  },
+  {
+    "event": "DTN611S Test 2",
+    "date": "2026-04-25",
+    "rawDate": "April 25, 2026",
+    "module": "DTN611S",
+    "type": "Test",
+    "notes": "08:00–10:00 | Engineering Basement A&B + Auditorium North & South"
+  },
+  {
+    "event": "SPS611S Lab 3 DevOps Due",
+    "date": "2026-04-25",
+    "rawDate": "April 25, 2026 1:59 AM (GMT+2)",
+    "module": "SPS611S",
+    "type": "Lab",
+    "notes": "Submit by 23:59"
+  },
+  {
+    "event": "⚠️ SVV711S Phase 2 Prep",
+    "date": "2026-04-25",
+    "rawDate": "April 25, 2026",
+    "module": "SVV711S",
+    "type": "Assignment",
+    "notes": "Phase 2 due in 2 days — finalise document, log sheet & plagiarism report"
+  },
+  {
+    "event": "CTE711S Test 2",
+    "date": "2026-04-27",
+    "rawDate": "April 27, 2026",
+    "module": "CTE711S",
+    "type": "Test",
+    "notes": "Venue & time TBD — watch for announcement"
+  },
+  {
+    "event": "SPS611S Project Deliverable 8 Due",
+    "date": "2026-04-27",
+    "rawDate": "April 27, 2026 1:59 AM (GMT+2)",
+    "module": "SPS611S",
+    "type": "Assignment",
+    "notes": "Submit by 23:59"
+  },
+  {
+    "event": "ARI711S Assignment Due",
+    "date": "2026-04-27",
+    "rawDate": "April 27, 2026 1:59 AM (GMT+2)",
+    "module": "ARI711S",
+    "type": "Assignment",
+    "notes": "Submit on eLearning by 23:59"
+  },
+  {
+    "event": "MAP711S Quiz Due",
+    "date": "2026-04-28",
+    "rawDate": "April 28, 2026 1:59 AM (GMT+2)",
+    "module": "MAP711S",
+    "type": "Quiz",
+    "notes": "Submit by 23:59"
+  },
+  {
+    "event": "CTE711S Quiz Due",
+    "date": "2026-04-28",
+    "rawDate": "April 28, 2026 1:59 AM (GMT+2)",
+    "module": "CTE711S",
+    "type": "Quiz",
+    "notes": "Submit by 23:59"
+  },
+  {
+    "event": "SVV711S Phase 2 Due",
+    "date": "2026-04-28",
+    "rawDate": "April 28, 2026 1:59 AM (GMT+2)",
+    "module": "SVV711S",
+    "type": "Assignment",
+    "notes": "Submit via eLearning by 23:59. Include log sheet + plagiarism report."
+  },
+  {
+    "event": "ARI711S Group Project Due",
+    "date": "2026-05-01",
+    "rawDate": "May 1, 2026 1:59 AM (GMT+2)",
+    "module": "ARI711S",
+    "type": "Assignment",
+    "notes": "Submit on eLearning by 23:59"
+  },
+  {
+    "event": "ARI711S Quiz 2",
+    "date": "2026-05-01",
+    "rawDate": "May 1, 2026",
+    "module": "ARI711S",
+    "type": "Quiz",
+    "notes": "Online"
+  },
+  {
+    "event": "DTN611S Quiz",
+    "date": "2026-05-02",
+    "rawDate": "May 2, 2026",
+    "module": "DTN611S",
+    "type": "Quiz",
+    "notes": "Online via E-Learning. Time TBC. Scope: Lesson 1–7"
+  },
+  {
+    "event": "CTE711S Group Assignment Presentations",
+    "date": "2026-05-04",
+    "rawDate": "May 4, 2026 → May 8, 2026",
+    "module": "CTE711S",
+    "type": "Presentation",
+    "notes": ""
+  },
+  {
+    "event": "ARI711S Group Project Presentations",
+    "date": "2026-05-04",
+    "rawDate": "May 4, 2026 → May 8, 2026",
+    "module": "ARI711S",
+    "type": "Presentation",
+    "notes": ""
+  },
+  {
+    "event": "DSA711S Supplementary",
+    "date": "2026-05-05",
+    "rawDate": "May 5, 2026",
+    "module": "DSA711S",
+    "type": "Supplementary",
+    "notes": ""
+  },
+  {
+    "event": "DTN611S Supplementary",
+    "date": "2026-05-09",
+    "rawDate": "May 9, 2026",
+    "module": "DTN611S",
+    "type": "Supplementary",
+    "notes": "09:30–11:30 | Engineering Basement A&B"
+  },
+  {
+    "event": "MAP711S Group Project Presentations",
+    "date": "2026-05-11",
+    "rawDate": "May 11, 2026",
+    "module": "MAP711S",
+    "type": "Presentation",
+    "notes": ""
+  },
+  {
+    "event": "CTE711S Supplementary",
+    "date": "2026-05-11",
+    "rawDate": "May 11, 2026 → May 12, 2026",
+    "module": "CTE711S",
+    "type": "Supplementary",
+    "notes": ""
+  },
+  {
+    "event": "SPS611S Supplementary",
+    "date": "2026-05-11",
+    "rawDate": "May 11, 2026",
+    "module": "SPS611S",
+    "type": "Supplementary",
+    "notes": "17:30 | Venue TBA"
+  },
+  {
+    "event": "⚠️ SVV711S Phase 3 Prep",
+    "date": "2026-05-16",
+    "rawDate": "May 16, 2026",
+    "module": "SVV711S",
+    "type": "Assignment",
+    "notes": "Phase 3 due in 2 days — finalise document, log sheet & plagiarism report"
+  },
+  {
+    "event": "SVV711S Phase 3 Due",
+    "date": "2026-05-19",
+    "rawDate": "May 19, 2026 1:59 AM (GMT+2)",
+    "module": "SVV711S",
+    "type": "Assignment",
+    "notes": "Submit via eLearning by 23:59. Include log sheet + plagiarism report."
+  },
+  {
+    "event": "⚠️ SVV711S Phase 4 Prep",
+    "date": "2026-05-30",
+    "rawDate": "May 30, 2026",
+    "module": "SVV711S",
+    "type": "Assignment",
+    "notes": "Phase 4 due in 2 days — finalise document, log sheet & plagiarism report"
+  },
+  {
+    "event": "SVV711S Phase 4 Due",
+    "date": "2026-06-02",
+    "rawDate": "June 2, 2026 1:59 AM (GMT+2)",
+    "module": "SVV711S",
+    "type": "Assignment",
+    "notes": "Submit via eLearning by 23:59. Include log sheet + plagiarism report."
+  }
+]

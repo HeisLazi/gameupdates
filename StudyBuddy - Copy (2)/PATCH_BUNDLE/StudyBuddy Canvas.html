@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>StudyBuddy · Design Canvas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Bricolage+Grotesque:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css">
+<style>
+  body { margin:0; background:#0a0d0e; }
+  .sb-iframe { width:100%; height:100%; border:0; background:var(--bg-1); }
+</style>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel" src="design-canvas.jsx"></script>
+<script type="text/babel">
+const { DCRoot, DCSection, DCArtboard } = window;
+
+const Frame = ({ hash }) => (
+  <iframe className="sb-iframe" src={'StudyBuddy.html#' + hash} />
+);
+
+function CanvasApp() {
+  return (
+    <DCRoot title="StudyBuddy · Screen Review" subtitle="All screens · click any artboard to focus">
+      <DCSection id="flagship" title="Flagship · most-played">
+        <DCArtboard id="splash"  label="01 · Ops / Splash"        width={1440} height={900}><Frame hash="splash"/></DCArtboard>
+        <DCArtboard id="combat"  label="02 · Combat HUD"          width={1440} height={900}><Frame hash="combat"/></DCArtboard>
+        <DCArtboard id="world"   label="03 · World Map"           width={1440} height={900}><Frame hash="world"/></DCArtboard>
+        <DCArtboard id="study"   label="04 · Study · Lab Notebook" width={1440} height={900}><Frame hash="study"/></DCArtboard>
+      </DCSection>
+
+      <DCSection id="modes" title="Run modes">
+        <DCArtboard id="cram"    label="05 · Cram · Draft + Wave" width={1440} height={900}><Frame hash="cram"/></DCArtboard>
+        <DCArtboard id="exam"    label="06 · Exam · Timed mixed"   width={1440} height={900}><Frame hash="exam"/></DCArtboard>
+        <DCArtboard id="result"  label="07 · Result / Loot"        width={1440} height={900}><Frame hash="result"/></DCArtboard>
+      </DCSection>
+
+      <DCSection id="meta" title="Meta · build & progression">
+        <DCArtboard id="arsenal" label="08 · Arsenal · Augments"  width={1440} height={900}><Frame hash="arsenal"/></DCArtboard>
+        <DCArtboard id="skills"  label="09 · Skill Tree"          width={1440} height={900}><Frame hash="skills"/></DCArtboard>
+        <DCArtboard id="pets"    label="10 · Pet Sanctuary"       width={1440} height={900}><Frame hash="pets"/></DCArtboard>
+      </DCSection>
+
+      <DCSection id="content" title="Content & raids">
+        <DCArtboard id="library" label="11 · Library · PDF + Insights" width={1440} height={900}><Frame hash="library"/></DCArtboard>
+        <DCArtboard id="raid"    label="12 · Raid Hub"            width={1440} height={900}><Frame hash="raid"/></DCArtboard>
+      </DCSection>
+
+      <DCSection id="ops" title="Ops · stats & schedule">
+        <DCArtboard id="stats"     label="13 · Stats / Prestige"  width={1440} height={900}><Frame hash="stats"/></DCArtboard>
+        <DCArtboard id="deadlines" label="14 · Deadlines · Calendar" width={1440} height={900}><Frame hash="deadlines"/></DCArtboard>
+      </DCSection>
+    </DCRoot>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<CanvasApp/>);
+</script>
+</body>
+</html>
