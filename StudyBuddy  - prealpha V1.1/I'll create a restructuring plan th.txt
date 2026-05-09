@@ -1,0 +1,245 @@
+I'll create a restructuring plan that's optimized for both testers and AI understanding.
+
+Read
+
+RESTRUCTURED PROJECT LAYOUT FOR TESTERS + AIs
+==============================================
+
+StudyBuddy/
+│
+├── 📖 START_HERE.md                    ← Testers read this (1 min: "How to play")
+├── README.md                           ← Developers read this (project overview)
+├── CONTEXT.md                          ← AI/dev reference (system architecture)
+│
+├── 🎮 BUILD & RUN
+│   └── build.sh / build.bat            ← Double-click to rebuild + open game
+│       (wraps: cd src && python3 build_html.py)
+│
+├── src/                                ← SOURCE CODE (the stuff that matters)
+│   ├── build_html.py                   ← THE BUILD SCRIPT
+│   ├── BUILD.md                        ← Build detailed notes
+│   ├── head.html                       ← HTML shell + base CSS
+│   ├── arena.css                       ← Arena styles
+│   │
+│   ├── app.jsx                         ← [CORE] App shell + state
+│   ├── splash.jsx                      ← [CORE] Splash screen + mode picker
+│   │
+│   ├── 📚 Study Mode
+│   │   ├── study_home.jsx              
+│   │   ├── library.jsx
+│   │   ├── exam.jsx
+│   │   └── deadlines.jsx
+│   │
+│   ├── ⚔️ Arena Mode
+│   │   ├── world.jsx                   ← World map + flow
+│   │   ├── combat.jsx                  ← Combat screen + rendering
+│   │   ├── enemies.jsx                 ← Enemy registry + abilities
+│   │   ├── skills.jsx                  ← Skill tree + abilities
+│   │   ├── arena_runtime.jsx           ← Arena state + biome/forge logic
+│   │   ├── arena_views.jsx             ← Arena UI screens
+│   │   └── multimob.jsx                ← Multi-enemy handling
+│   │
+│   ├── 🎯 Special Modes
+│   │   ├── cram.jsx                    ← Cram/Blitz mode
+│   │   ├── lockin.jsx                  ← Lock In quick session
+│   │   └── study_pass.jsx              ← Pass Mode exam prep
+│   │
+│   ├── 🔧 Shared Systems
+│   │   ├── bonuses.jsx                 ← Stat calculation + prestige
+│   │   ├── raids.jsx                   ← Raid system
+│   │   ├── caveman.jsx                 ← Caveman class patch
+│   │   └── extras.jsx                  ← Misc helpers
+│   │
+│   └── 📊 Game Data (user-edited via app)
+│       ├── modules_all.json
+│       ├── deadlines.json
+│       └── grades.json
+│
+├── design/                             ← DESIGN REFERENCE (read-only)
+│   ├── README.md                       ← What's in here + how to use
+│   ├── tokens.css                      ← Design system (colors, spacing, type)
+│   ├── sprites.jsx                     ← Sprite library
+│   ├── ui.jsx                          ← UI primitives
+│   ├── brand.jsx                       ← Logo + wordmark
+│   ├── screens-1/2/3.jsx               ← Hi-fidelity prototypes
+│   ├── world-variants.jsx              ← World map variants
+│   └── *.html                          ← Interactive design mockups
+│
+├── docs/                               ← DOCUMENTATION HUB
+│   ├── ARCHITECTURE.md                 ← System overview (NEW)
+│   ├── MODULE_SCHEMA.md                ← How to write modules
+│   ├── GDD.md                          ← Game design doc (full)
+│   ├── API.md                          ← State shape + key functions (NEW)
+│   └── DECISIONS.md                    ← Fork points + open choices
+│
+├── test/                               ← QA & TESTING
+│   ├── TESTER_RUNBOOK.md               ← Step-by-step test cases (NEW)
+│   ├── qa_screens/                     ← Reference screenshots
+│   └── known_issues.md                 ← Bug tracker (NEW)
+│
+└── build/                              ← OUTPUT
+    └── StudyBuddy.html                 ← 🎮 THE GAME (open to play)
+
+
+KEY PRINCIPLES
+==============
+
+1. TESTER ENTRY POINT:
+   - Open START_HERE.md → tells them to run build.sh → open build/StudyBuddy.html
+   - Everything else is "don't touch unless debugging"
+
+2. AI/DEVELOPER ENTRY POINT:
+   - Read CONTEXT.md (high-level system map)
+   - Read docs/ARCHITECTURE.md (how systems connect)
+   - Files in src/ are named by *feature*, not build order
+   - Comment at top of each file shows what it does + dependencies
+   - Clear section headers: [CORE] = required, [OPT] = optional, [SYSTEM] = runtime
+
+3. BUILD FILE GROUPING:
+   - Not alphabetical or build-order
+   - Grouped by: Core → Study → Arena → Modes → Systems
+   - Makes it obvious what a new feature should touch
+
+4. DOCUMENTATION STRATEGY:
+   - START_HERE.md = 1 min read for testers (just run the game)
+   - README.md = project context (what is this, who made it)
+   - CONTEXT.md = AI/dev quick reference (what file does what)
+   - docs/ = deep dives (architecture, schema, design decisions)
+   - Each file in src/ has 2-line header comment explaining purpose
+
+5. DESIGN SEPARATION:
+   - design/ folder is READ-ONLY for developers
+   - tokens.css is the source of truth (don't hardcode colors)
+   - High-fidelity mockups exist but aren't spliced—use as reference
+   - Clear file headers: "Design reference only — port markup to src/"
+
+6. DATA HANDLING:
+   - modules_all.json, deadlines.json, grades.json live in src/
+   - Edited via the app itself (not hand-edited in most cases)
+   - Clear schema in docs/MODULE_SCHEMA.md
+   - JSON files are auto-preserved across builds
+
+
+FILE NAMING CONVENTION
+======================
+
+Core files (always needed):
+  ✓ app.jsx, head.html, arena.css
+
+Screen/mode files (named by purpose, not function):
+  ✓ splash.jsx, library.jsx, combat.jsx, skills.jsx
+  ✓ NOT: "arena_views_combat_hud.jsx" → just combat.jsx
+
+System files (named by domain):
+  ✓ bonuses.jsx (prestige math), raids.jsx (raid system)
+  ✓ NOT: "helpers.jsx", "utils.jsx" → be specific
+
+New features:
+  → Create cram.jsx, not cram_mode.jsx or cram_handler.jsx
+  → Put in src/ root or a feature folder, file header explains everything
+
+
+BUILD PROCESS (SIMPLIFIED)
+==========================
+
+For testers:
+  1. Double-click build.sh (or build.bat on Windows)
+  2. Game opens automatically
+  3. Done.
+
+For devs:
+  1. Edit src/*.jsx
+  2. cd src && python3 build_html.py
+  3. Hard refresh build/StudyBuddy.html
+  4. Verify in browser
+
+For AIs:
+  1. Read CONTEXT.md to understand system
+  2. Read docs/ARCHITECTURE.md to see how systems connect
+  3. Search src/ for the feature you need to edit
+  4. File headers explain dependencies + key functions
+  5. Check docs/API.md for state shape if unsure
+
+
+NEW DOCS TO CREATE
+==================
+
+1. START_HERE.md
+   - "How do I play StudyBuddy?"
+   - One command: run build.sh
+   - Link to TESTER_RUNBOOK.md if bugs
+
+2. docs/ARCHITECTURE.md
+   - Splash → Study/Arena picker
+   - Study side: modules, spaced repetition, library
+   - Arena side: biomes, enemies, prestige
+   - How modes (Cram, Pass, Lock In) plug in
+   - State shape overview
+
+3. docs/API.md
+   - defaultState() shape
+   - Key functions per file
+   - Prestige/biome/forge math entry points
+   - What to grep for when debugging
+
+4. test/TESTER_RUNBOOK.md
+   - "Test the Study tab": open module, answer Q, check streak
+   - "Test Arena": beat Dojo, see loot, try Blitz
+   - "Test Prestige": unlock perk, reset, check tree
+   - "Test modes": try Cram, Lock In, Pass Mode
+   - "Known issues to skip"
+
+5. test/known_issues.md
+   - What's broken / what to ignore
+   - What's not implemented yet
+   - What's safe to test
+
+6. docs/DECISIONS.md
+   - Fork 1: Cram split → Blitz vs Pass
+   - Fork 2: Mobile strategy
+   - Fork 3: Monetization
+   - Current status: what's locked, what's still ambiguous
+
+
+MIGRATION CHECKLIST
+===================
+
+From current structure:
+
+DELETE:
+  ✓ studybuddy_src/build/{arena.jsx, arena.jsx} (already split)
+  ✓ Any old React files in root
+  ✓ PATCH_BUNDLE_LOCATION.md
+
+CONSOLIDATE:
+  ✓ Move build/* to src/ (rename from studybuddy_src)
+  ✓ Move data files to src/
+  ✓ Move docs to docs/ folder with clear names
+
+RENAME:
+  ✓ studybuddy_src/ → src/
+  ✓ design_handoff_studybuddy/ → design/
+  ✓ qa_screens/ → test/qa_screens/
+
+CREATE:
+  ✓ START_HERE.md
+  ✓ build.sh / build.bat (build scripts)
+  ✓ docs/ARCHITECTURE.md
+  ✓ docs/API.md
+  ✓ test/TESTER_RUNBOOK.md
+  ✓ test/known_issues.md
+  ✓ src/BUILD.md (move from CONTEXT.md section)
+  ✓ src/ file headers (2-line purpose comment in each .jsx)
+
+UPDATE:
+  ✓ README.md (project overview, link to START_HERE)
+  ✓ CONTEXT.md (keep as AI quick-ref, add links to deep docs)
+  ✓ Each JSX file header with: purpose + dependencies
+
+This structure means:
+
+👨‍🧪 Tester: Opens START_HERE → runs game → follows TESTER_RUNBOOK if testing
+🤖 AI: Reads CONTEXT.md (map) → ARCHITECTURE.md (how it works) → dives into src/ (guided by file headers)
+👨‍💻 Dev: Same as AI, but also edits files directly
+📦 Build: One command, everything works, data preserved
+Want me to implement this?
